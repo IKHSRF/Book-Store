@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "485662594394",
+    "project_id": "toko-buku-wikrama",
+    "storage_bucket": "toko-buku-wikrama.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485662594394:android:7ee602f70ef1c6ef904f63",
+        "android_client_info": {
+          "package_name": "com.example.toko_buku"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485662594394-93f8vgkv2rqi429cf15dui2sqnsoeobv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEmiflXN_K3upGYHreiEuOoy9gLe6S36I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485662594394-93f8vgkv2rqi429cf15dui2sqnsoeobv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
