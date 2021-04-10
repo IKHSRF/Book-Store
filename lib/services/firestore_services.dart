@@ -3,6 +3,7 @@ import 'package:toko_buku/model/buku.dart';
 import 'package:toko_buku/model/distributor.dart';
 import 'package:toko_buku/model/pasok.dart';
 import 'package:toko_buku/model/penjualan.dart';
+import 'package:toko_buku/model/shopping_cart.dart';
 import 'package:toko_buku/model/user.dart';
 
 class FirestoreServices {
@@ -14,6 +15,8 @@ class FirestoreServices {
   static CollectionReference _userCollection = _firestore.collection('user');
   static CollectionReference _penjualanCollection =
       _firestore.collection('penjualan');
+  static CollectionReference _shoppingCartCollection =
+      _firestore.collection('shopping_cart');
 
   // Get All Data
   Stream<List<Distributor>> getDistributor() {
@@ -39,6 +42,11 @@ class FirestoreServices {
   Stream<List<Penjualan>> getPenjualan() {
     return _penjualanCollection.snapshots().map((snapshot) =>
         snapshot.docs.map((doc) => Penjualan.fromFirestore(doc)).toList());
+  }
+
+  Stream<List<ShoppingCart>> getShoppingCart() {
+    return _shoppingCartCollection.snapshots().map((snapshot) =>
+        snapshot.docs.map((doc) => ShoppingCart.fromFirestore(doc)).toList());
   }
 
   // Get One Data by Id
@@ -87,6 +95,16 @@ class FirestoreServices {
   Future<String> addPenjualan(Penjualan penjualan) async {
     try {
       await _penjualanCollection.add(penjualan.toFirestore());
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> addShoppingCart(ShoppingCart cart) async {
+    try {
+      await _shoppingCartCollection.add(cart.toFirestore());
       return 'berhasil';
     } catch (error) {
       print(error);
