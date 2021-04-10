@@ -4,7 +4,7 @@ class Pasok {
   final String id;
   final String idDistributor;
   final String idBuku;
-  final String jumlah;
+  final int jumlah;
   final String tanggal;
 
   Pasok({

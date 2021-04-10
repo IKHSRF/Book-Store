@@ -1,12 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:toko_buku/model/buku.dart';
 import 'package:toko_buku/model/distributor.dart';
+import 'package:toko_buku/model/pasok.dart';
 
 class FirestoreServices {
   static FirebaseFirestore _firestore = FirebaseFirestore.instance;
   static CollectionReference _distributorCollection =
       _firestore.collection('distributor');
   static CollectionReference _bukuCollection = _firestore.collection('buku');
+  static CollectionReference _pasokCollection = _firestore.collection('pasok');
 
   // Get All Data
   Stream<List<Distributor>> getDistributor() {
@@ -17,6 +19,11 @@ class FirestoreServices {
   Stream<List<Buku>> getBuku() {
     return _bukuCollection.snapshots().map((snapshot) =>
         snapshot.docs.map((doc) => Buku.fromFirestore(doc)).toList());
+  }
+
+  Stream<List<Pasok>> getPasok() {
+    return _pasokCollection.snapshots().map((snapshot) =>
+        snapshot.docs.map((doc) => Pasok.fromFirestore(doc)).toList());
   }
 
   // Get One Data by Id
@@ -35,6 +42,16 @@ class FirestoreServices {
   Future<String> addBuku(Buku buku) async {
     try {
       await _bukuCollection.add(buku.toFirestore());
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> addPasok(Pasok pasok) async {
+    try {
+      await _pasokCollection.add(pasok.toFirestore());
       return 'berhasil';
     } catch (error) {
       print(error);
