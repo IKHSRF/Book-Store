@@ -24,7 +24,7 @@ class Distributor {
     );
   }
 
-  toFirestore() {
+  Map<String, dynamic> toFirestore() {
     return {
       'nama_distributor': namaDistributor,
       'alamat': alamat,
