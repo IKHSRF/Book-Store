@@ -47,5 +47,6 @@ class PasokProvider with ChangeNotifier {
       jumlah: _jumlah,
       tanggal: _tanggal,
     );
+    firestoreServices.addPasok(pasok);
   }
 }
