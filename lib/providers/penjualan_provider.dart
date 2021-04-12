@@ -73,4 +73,21 @@ class PenjualanProvider with ChangeNotifier {
     );
     firestoreServices.addPenjualan(penjualan);
   }
+
+  updatePenjualan(String id) {
+    var penjualan = Penjualan(
+      idBuku: _idBuku,
+      idKasir: _idKasir,
+      jumlahBeli: _jumlahBeli,
+      bayar: _bayar,
+      kembalian: _kembalian,
+      totalHarga: _totalHarga,
+      tanggal: _tanggal,
+    );
+    firestoreServices.updatePenjualan(id, penjualan);
+  }
+
+  removePenjualan(String id) {
+    firestoreServices.removePenjualan(id);
+  }
 }
