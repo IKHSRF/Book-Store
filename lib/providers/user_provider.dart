@@ -73,4 +73,21 @@ class UserProvider with ChangeNotifier {
     );
     firestoreServices.addUser(user);
   }
+
+  updateUser(String id) {
+    var user = TokoUser(
+      nama: _nama,
+      alamat: _alamat,
+      telepon: _telepon,
+      status: _status,
+      username: _username,
+      password: _password,
+      akses: _akses,
+    );
+    firestoreServices.updateUser(id, user);
+  }
+
+  removeUser(String id) {
+    firestoreServices.removeUser(id);
+  }
 }
