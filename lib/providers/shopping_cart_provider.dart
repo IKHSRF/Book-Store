@@ -42,4 +42,17 @@ class ShoppingCartProvider with ChangeNotifier {
     );
     firestoreServices.addShoppingCart(cart);
   }
+
+  updateShoppingCart(String id) {
+    var cart = ShoppingCart(
+      idBuku: _idBuku,
+      jumlahBeli: _jumlahBeli,
+      totalHarga: _totalHarga,
+    );
+    firestoreServices.updateCartItem(id, cart);
+  }
+
+  removeShoppingCart(String id) {
+    firestoreServices.removeCartItem(id);
+  }
 }

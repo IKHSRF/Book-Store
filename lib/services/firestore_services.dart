@@ -256,7 +256,7 @@ class FirestoreServices {
     }
   }
 
-  Future<void> remoteCartItem(String id) {
+  Future<void> removeCartItem(String id) {
     try {
       return _shoppingCartCollection.doc(id).delete();
     } catch (error) {
