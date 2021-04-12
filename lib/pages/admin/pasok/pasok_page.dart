@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EditDistributorPage extends StatelessWidget {
-  static const String id = '/distributor/edit';
+class PasokPage extends StatelessWidget {
+  static const String id = '/pasok';
   @override
   Widget build(BuildContext context) {
     return Container();
