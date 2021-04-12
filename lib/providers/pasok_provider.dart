@@ -49,4 +49,18 @@ class PasokProvider with ChangeNotifier {
     );
     firestoreServices.addPasok(pasok);
   }
+
+  updatePasok(String id) {
+    var pasok = Pasok(
+      idDistributor: _idDistributor,
+      idBuku: _idBuku,
+      jumlah: _jumlah,
+      tanggal: _tanggal,
+    );
+    firestoreServices.updatePasok(id, pasok);
+  }
+
+  removePasok(String id) {
+    firestoreServices.removePasok(id);
+  }
 }
