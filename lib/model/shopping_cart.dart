@@ -18,9 +18,9 @@ class ShoppingCart {
 
     return ShoppingCart(
       id: snapshot.id,
-      idBuku: data['id_buku'],
-      jumlahBeli: data['jumlah_beli'],
-      totalHarga: data['total_harga'],
+      idBuku: data['id_buku'] ?? '',
+      jumlahBeli: data['jumlah_beli'] ?? 0,
+      totalHarga: data['total_harga'] ?? 0,
     );
   }
 

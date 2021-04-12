@@ -20,10 +20,10 @@ class Pasok {
 
     return Pasok(
       id: snapshot.id,
-      idDistributor: data['id_distributor'],
-      idBuku: data['id_buku'],
-      jumlah: data['jumlah'],
-      tanggal: data['tanggal'],
+      idDistributor: data['id_distributor'] ?? '',
+      idBuku: data['id_buku'] ?? '',
+      jumlah: data['jumlah'] ?? 0,
+      tanggal: data['tanggal'] ?? '',
     );
   }
 

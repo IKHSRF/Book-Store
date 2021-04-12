@@ -42,4 +42,17 @@ class DistributorProvider with ChangeNotifier {
     );
     firestoreServices.addDistributor(distributor);
   }
+
+  updateDistributor(String id) {
+    var distributor = Distributor(
+      namaDistributor: _namaDistributor,
+      alamat: _alamat,
+      telepon: _telepon,
+    );
+    firestoreServices.updateDistributor(id, distributor);
+  }
+
+  removeDistributor(String id) {
+    firestoreServices.removeDistributor(id);
+  }
 }

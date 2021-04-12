@@ -26,13 +26,13 @@ class TokoUser {
 
     return TokoUser(
       id: snapshot.id,
-      nama: data['nama'],
-      alamat: data['alamat'],
-      telepon: data['telepon'],
-      status: data['status'],
-      username: data['username'],
-      password: data['password'],
-      akses: data['akses'],
+      nama: data['nama'] ?? '',
+      alamat: data['alamat'] ?? '',
+      telepon: data['telepon'] ?? '',
+      status: data['status'] ?? '',
+      username: data['username'] ?? '',
+      password: data['password'] ?? '',
+      akses: data['akses'] ?? '',
     );
   }
 

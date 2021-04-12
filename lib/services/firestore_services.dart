@@ -20,6 +20,7 @@ class FirestoreServices {
       _firestore.collection('shopping_cart');
   static CollectionReference _reportSettingCollection =
       _firestore.collection('report_setting');
+  static SetOptions _setOptions = SetOptions(merge: true);
 
   // Get All Data
   Stream<List<Distributor>> getDistributor() {
@@ -130,7 +131,146 @@ class FirestoreServices {
     }
   }
 
-  // Remove Data
-
   // Update Data
+  Future<String> updateDistributor(String id, Distributor distributor) async {
+    try {
+      await _distributorCollection
+          .doc(id)
+          .set(distributor.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> updateBuku(String id, Buku buku) async {
+    try {
+      await _bukuCollection.doc(id).set(buku.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> updatePasok(String id, Pasok pasok) async {
+    try {
+      await _pasokCollection.doc(id).set(pasok.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> updatePenjualan(String id, Penjualan penjualan) async {
+    try {
+      await _penjualanCollection
+          .doc(id)
+          .set(penjualan.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> updateReportSetting(String id, ReportSetting setting) async {
+    try {
+      await _reportSettingCollection
+          .doc(id)
+          .set(setting.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> updateCartItem(String id, ShoppingCart cart) async {
+    try {
+      await _shoppingCartCollection
+          .doc(id)
+          .set(cart.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<String> updateUser(String id, TokoUser user) async {
+    try {
+      await _userCollection.doc(id).set(user.toFirestore(), _setOptions);
+      return 'berhasil';
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  // Remove Data
+  Future<void> removeDistributor(String id) {
+    try {
+      return _distributorCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<void> removeBuku(String id) {
+    try {
+      return _bukuCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<void> removePasok(String id) {
+    try {
+      return _pasokCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<void> removePenjualan(String id) {
+    try {
+      return _penjualanCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<void> removeReportSetting(String id) {
+    try {
+      return _reportSettingCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<void> remoteCartItem(String id) {
+    try {
+      return _shoppingCartCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
+
+  Future<void> removeUser(String id) {
+    try {
+      return _userCollection.doc(id).delete();
+    } catch (error) {
+      print(error);
+      return error.message;
+    }
+  }
 }

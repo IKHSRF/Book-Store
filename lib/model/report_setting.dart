@@ -26,13 +26,13 @@ class ReportSetting {
 
     return ReportSetting(
       id: snapshot.id,
-      namaPerusahaan: data['nama_perusahaan'],
-      alamat: data['alamat'],
-      telepon: data['telepon'],
-      web: data['web'],
-      logo: data['logo'],
-      noHp: data['no_hp'],
-      email: data['email'],
+      namaPerusahaan: data['nama_perusahaan'] ?? '',
+      alamat: data['alamat'] ?? '',
+      telepon: data['telepon'] ?? '',
+      web: data['web'] ?? '',
+      logo: data['logo'] ?? '',
+      noHp: data['no_hp'] ?? '',
+      email: data['email'] ?? '',
     );
   }
 

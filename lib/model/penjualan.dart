@@ -26,13 +26,13 @@ class Penjualan {
 
     return Penjualan(
       id: snapshot.id,
-      idBuku: data['id_buku'],
-      idKasir: data['id_kasir'],
-      jumlahBeli: data['jumlah_beli'],
-      bayar: data['bayar'],
-      kembalian: data['kembalian'],
-      totalHarga: data['total_harga'],
-      tanggal: data['tanggal'],
+      idBuku: data['id_buku'] ?? '',
+      idKasir: data['id_kasir'] ?? '',
+      jumlahBeli: data['jumlah_beli'] ?? 0,
+      bayar: data['bayar'] ?? 0,
+      kembalian: data['kembalian'] ?? 0,
+      totalHarga: data['total_harga'] ?? 0,
+      tanggal: data['tanggal'] ?? '',
     );
   }
 
