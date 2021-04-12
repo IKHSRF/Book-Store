@@ -97,4 +97,24 @@ class BukuProvider with ChangeNotifier {
     );
     firestoreServices.addBuku(buku);
   }
+
+  updateBuku(String id) {
+    var buku = Buku(
+      judul: _judul,
+      nosbn: _nosbn,
+      penulis: _penulis,
+      penerbit: _penerbit,
+      tahun: _tahun,
+      stok: _stok,
+      hargaPokok: _hargaPokok,
+      hargaJual: _hargaJual,
+      ppn: _ppn,
+      diskon: _diskon,
+    );
+    firestoreServices.updateBuku(id, buku);
+  }
+
+  removeBuku(String id) {
+    firestoreServices.removeBuku(id);
+  }
 }
