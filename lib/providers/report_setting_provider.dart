@@ -74,4 +74,21 @@ class ReportSettingProvider with ChangeNotifier {
     );
     firestoreServices.addReportSetting(setting);
   }
+
+  updateReportSetting(String id) {
+    var setting = ReportSetting(
+      namaPerusahaan: _namaPerusahaan,
+      alamat: _alamat,
+      telepon: _telepon,
+      web: _web,
+      logo: _logo,
+      noHp: _noHp,
+      email: _email,
+    );
+    firestoreServices.updateReportSetting(id, setting);
+  }
+
+  removeReportSetting(String id) {
+    firestoreServices.removeReportSetting(id);
+  }
 }
